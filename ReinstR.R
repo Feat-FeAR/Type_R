@@ -59,7 +59,7 @@ CP_level_2 <- c(
   "roxygen2",
   "testthat",
   "knitr",
-  "svDialogs")
+  "svDialogs") # Dialog Boxes for Windows and Linuxes
 
 CP_level_3 <- c()
 
