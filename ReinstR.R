@@ -1,3 +1,7 @@
+# TO ADD:
+# download user manual PDFs locally
+# check the installed packages (comparison with BPL e CPL)
+
 
 # -------------- #
 #  Bioconductor  #
