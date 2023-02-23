@@ -31,10 +31,23 @@
 library(forcats)  # from the tidyverse, for factor reordering through fct_reorder()
 library(dplyr)    # for desc() function to sort in descending order
 library(ggplot2)
+library(openxlsx) # Reading, Writing, and Editing of .xlsx (Excel) Files
+library(cmatools)
 
 # Load data
-terms_table <- read.delim("C:/Users/aleph/Desktop/ToppFun_Selected_vs_Ctrl_Down.txt",
-                          sep = "\t", header = TRUE)
+# Desktop local path
+local.Desktop <- paste0(Sys.getenv("USERPROFILE"), "/Desktop")
+terms_file <- rstudioapi::selectFile(caption = "Select a list of terms",
+                                     label = "Select",
+                                     path = local.Desktop,
+                                     filter = "All Files (*)",
+                                     existing = TRUE)
+
+if (grep("\\.xlsx?$", terms_file)) {
+  terms_table <- read.xlsx(xlsxFile = terms_file, sheet = 1)
+} else {
+  terms_table <- read.delim(terms_file, sep = "\t", header = TRUE)
+}
 
 # Subset by category
 term <- list() # create an empty list
@@ -47,6 +60,8 @@ term[["PA"]] <- subset(terms_table, Category == "Pathway")
   term[["KE"]] <- subset(terms_table, grepl("KEGG", Source))
 term[["TF"]] <- subset(terms_table, Category == "Transcription Factor Binding Site")
 term[["FA"]] <- subset(terms_table, Category == "Gene Family")
+
+lms(term)
 
 # Subset by top-q-value
 top_term <- term

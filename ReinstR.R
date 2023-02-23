@@ -28,7 +28,10 @@ BP_level_2 <- c(
   "EnhancedVolcano", # Volcano Plots
   "affy",
   "oligo",
-  "affycoretools")
+  "affycoretools",
+  "clusterProfiler", # Package for ORA and GSEA in R
+  "enrichplot", # Plot ORA and GSEA results
+  "pathview") # Download KEGG enrichment path locally
 
 # Specific-purpose Bioconductor Packages
 BP_level_3 <- c(
@@ -63,7 +66,9 @@ CP_level_2 <- c(
   "roxygen2",
   "testthat",
   "knitr",
-  "svDialogs") # Dialog Boxes for Windows and Linuxes
+  "svDialogs", # Dialog Boxes for Windows and Linuxes
+  "ggnewscale")
+
 
 CP_level_3 <- c()
 
@@ -85,6 +90,10 @@ if (lev == 1) {
   stop("Invalid `level` value")
 }
 
-# Install Bioconductor packages
+# Install packages
 BiocManager::install(BPL)
 install.packages(CPL)
+
+if (lev >= 2) {
+  devtools::install_github("CMA-Lab/cmatools")
+}
