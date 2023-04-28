@@ -69,7 +69,6 @@ CP_level_1 <- c(
 CP_level_2 <- c(
   "plyr", # Tools for Splitting, Applying and Combining Data
   "googledrive", # Access Google Drive from R (from the tidyverse)
-  "tidyverse",
   "rgl", # to build 3D charts - plot3d(), play3d()
   "magick", # for advanced image processing - scatter3d()
   "devtools", # for R package developing
