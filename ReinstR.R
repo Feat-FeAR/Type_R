@@ -61,13 +61,14 @@ CP_level_1 <- c(
   "VennDiagram", # Venn Diagrams
   "openxlsx", # Reading, Writing, and Editing of .xlsx (Excel) Files
   "gplots", # Heatmap with extensions - heatmap.2()
-  "ggplot2",
+  "ggplot2", # Creating graphics based on The Grammar of Graphics
   "RColorBrewer",     # Color Palette for R
   "RSQLite" # SQLite interface for R
   )
 
 CP_level_2 <- c(
   "plyr", # Tools for Splitting, Applying and Combining Data
+  "dplyr", # Data frames manipulation tools
   "googledrive", # Access Google Drive from R (from the tidyverse)
   "rgl", # to build 3D charts - plot3d(), play3d()
   "magick", # for advanced image processing - scatter3d()
