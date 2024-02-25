@@ -19,6 +19,7 @@ BP_level_1 <- c(
   "preprocessCore",# Normalization by Quantile-Quantile Algorithm
   "limma", # Empirical Bayes Method for Differential Expression Analysis
   "RankProd", # Rank Product Method for Differential Expression Analysis
+  "DESeq2", # Differential Expression Analysis by Negative Binomial Distribution
   "genefilter", # Gene Expression Filtering
   "futile.logger", # Logging Utility for R
   "VennDiagram" # High-Resolution Venn and Euler Plots
@@ -67,6 +68,8 @@ CP_level_1 <- c(
   )
 
 CP_level_2 <- c(
+  "tools",
+  "stringr",
   "plyr", # Tools for Splitting, Applying and Combining Data
   "dplyr", # Data frames manipulation tools
   "googledrive", # Access Google Drive from R (from the tidyverse)
@@ -77,7 +80,9 @@ CP_level_2 <- c(
   "testthat",
   "knitr",
   "svDialogs", # Dialog Boxes for Windows and Linuxes
-  "ggnewscale"
+  "ggnewscale",
+  "mclust", # Gaussian Mixture Modelling for Model-Based Clustering
+  "BWStest" # Baumgartner-Weiss-Schindler Test of Equal Distributions
   )
 
 
@@ -107,6 +112,11 @@ if (lev == 1) {
 BiocManager::install(BPL)
 install.packages(CPL)
 
+
+
+# -------- #
+#  GitHub  #
+# -------- #
 if (lev >= 2) {
-  devtools::install_github("CMA-Lab/cmatools")
+  devtools::install_github("TCP-Lab/r4tcpl")
 }
