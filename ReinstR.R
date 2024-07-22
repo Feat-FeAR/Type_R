@@ -29,25 +29,37 @@ BP_level_1 <- c(
 BP_level_2 <- c(
   "PCAtools", # Principal Component Analysis
   "GEOquery",
-  "EnhancedVolcano", # Volcano Plots
-  "affy",
-  "oligo",
+  "EnhancedVolcano", # Volcano plots with enhanced coloring and labeling
+  "affy", # Preprocessing tools for older Affymetrix oligonucleotide arrays (3' IVT)
+  "oligo", # Preprocessing tools for newer Affymetrix oligonucleotide arrays (GeneChip/Exo + popular old platforms)
   "affycoretools",
   "clusterProfiler", # Package for ORA and GSEA in R
   "enrichplot", # Plot ORA and GSEA results
   "pathview" # Download KEGG enrichment path locally
   )
 
-# Special-purpose Bioconductor Packages (annotation Data Bases)
+# Special-purpose Bioconductor Packages (annotation Data Bases packages <*.db>)
 BP_level_3 <- c(
   "AnnotationDbi",
   "org.Hs.eg.db",
+  "org.Mm.eg.db",
   "hgu133a.db",
   "hgu133b.db",
   "hgu133plus2.db",
   "hugene10sttranscriptcluster.db",
   "HsAgilentDesign026652.db"
   )
+
+# These packages (Affymetrix Platform Design Packages <pd.*>) should be
+# installed and loaded automatically when calling read.celfiles() function from
+# the 'oligo' package:
+#
+# "pd.hg.u133a" # Platform Design Info for The Manufacturer's Name HG-U133A
+# "pd.hg.u133b" # Platform Design Info for The Manufacturer's Name HG-U133B
+# "pd.hg.u133.plus.2" # Platform Design Info for HG-U133 Plus 2.0
+# "pd.hugene.1.0.st.v1" # Platform Design Info for Affymetrix HuGene-1_0-st-v1
+
+
 
 
 # ------ #
@@ -59,10 +71,11 @@ BP_level_3 <- c(
 CP_level_1 <- c(
   "car", # VIF and factorial ANOVA using Type III Sums of Squares
   "rafalib", # Bland Altman Plots (aka MA Plots)
-  "VennDiagram", # Venn Diagrams
+  "VennDiagram", # High-Resolution Venn and Euler Plots
   "openxlsx", # Reading, Writing, and Editing of .xlsx (Excel) Files
   "gplots", # Heatmap with extensions - heatmap.2()
   "ggplot2", # Creating graphics based on The Grammar of Graphics
+  "reshape2", # Flexibly Reshape Data: A Reboot of the Reshape Package
   "RColorBrewer",     # Color Palette for R
   "RSQLite" # SQLite interface for R
   )
@@ -87,7 +100,7 @@ CP_level_2 <- c(
 
 
 CP_level_3 <- c(
-  "tidyverse" # the entire tidyverse
+  "tidyverse" # the entire tidyverse - R packages for data science
   )
 
 
