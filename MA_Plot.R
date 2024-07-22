@@ -12,12 +12,23 @@
 # customizing 'ggplot2'-based publication ready plots.
 #
 
+# "Old style" - Without Biocopnductor
+# `rafalib` package for Bland-Altman Plot aka MA Plot (by Rafael A Irizarry)
+
+library(rafalib)
+
+maplot(arr1, arr2,
+       xlab = "A (Average log-expression)",
+       ylab = "M (Expression log-ratio)",
+       n = 5e4, curve.add = TRUE,
+       curve.col = "darkred", curve.lwd = 1.5, curve.n = 1e4,
+       pch = 20, cex = 0.1)
+
 
 
 
 
 library(ggpubr)
-
 
 # Load example data set...
 # data(diff_express) # Data sets in package 'ggpubr'
